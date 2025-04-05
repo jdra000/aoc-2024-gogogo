@@ -20,7 +20,7 @@ func main() {
 func readList() (l1, l2 []int) {
     file, err := os.ReadFile("./file.txt")
     if err != nil {
-        log.Fatal()
+        log.Fatal(err)
     }
     fileThatIsReader := bytes.NewReader(file)
     scanner := bufio.NewScanner(fileThatIsReader)
@@ -37,6 +37,7 @@ func readList() (l1, l2 []int) {
     }
     return listnumberOne, listnumberTwo
 }
+
 func calcTotalDistance(l1, l2 []int) int {
     var sum float64
     for i := 0; i < len(l1); i++ {
@@ -45,6 +46,7 @@ func calcTotalDistance(l1, l2 []int) int {
     }
     return int(sum)
 }
+
 func orderList(l []int) []int {
     for i := 0; i < len(l) - 1; i++ {
         for j := 0; j < len(l)-i-1; j++ {
