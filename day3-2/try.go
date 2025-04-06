@@ -65,7 +65,8 @@ func main(){
             if op == 0{
                if do{
                    //fmt.Printf("%s", line[start:end])
-                   acc += calcMul(string(line[start:end])) }else{
+                   acc += calcMul(string(line[start:end])) 
+               }else{
                     continue
                }
             } else if op == -1{
